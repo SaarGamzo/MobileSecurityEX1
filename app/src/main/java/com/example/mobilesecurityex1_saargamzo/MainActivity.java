@@ -13,11 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.net.wifi.WifiManager;
+import android.bluetooth.BluetoothAdapter;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView missingConditions;
     private Button submitBtn;
     private EditText passwordInputText;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private WifiManager wifiManager;
     private NfcManager nfcManager;
     private BatteryManager batteryManager;
+    private BluetoothAdapter bluetoothAdapter;
 
     /**
      * Called when the activity is first created.
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         nfcManager = (NfcManager) getSystemService(Context.NFC_SERVICE);
         batteryManager = (BatteryManager) getSystemService(Context.BATTERY_SERVICE);
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     /**
@@ -108,14 +110,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Checks if Bluetooth is enabled.
+     * @return true if Bluetooth is enabled, false otherwise.
+     */
+    private boolean checkBluetoothStatus() {
+        return bluetoothAdapter != null && bluetoothAdapter.isEnabled();
+    }
+
+    /**
      * Verifies if the current time is within the specified range.
-     * @return true if the current time is between 10:00 and 21:00, false otherwise.
+     * @return true if the current time is between 10:00 and 22:00, false otherwise.
      */
     private boolean verifyTimeInRange() {
         Calendar calendar = Calendar.getInstance();
         int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         int minHour = 10;
-        int maxHour = 21;
+        int maxHour = 22;
         return currentHour >= minHour && currentHour < maxHour;
     }
 
@@ -154,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
         return !passwordInputText.getText().toString().isEmpty();
     }
 
+
     /**
      * Verifies all the required conditions for login.
      * @return true if all conditions are met, false otherwise.
@@ -178,7 +189,11 @@ public class MainActivity extends AppCompatActivity {
             result = false;
         }
         if (!verifyTimeInRange()) {
-            missingText.append("# Hour is not between 10-21!\n");
+            missingText.append("# Hour is not between 10-22!\n");
+            result = false;
+        }
+        if (!checkBluetoothStatus()) {
+            missingText.append("# Bluetooth is not enabled!\n");
             result = false;
         }
         if (!result) {
