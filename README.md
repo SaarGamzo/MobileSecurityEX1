@@ -10,7 +10,7 @@ This Android application demonstrates a secure login mechanism that requires mul
 2. **NFC Status Check:** Ensures that NFC is enabled.
 3. **Battery Level Verification:** Compares the battery level with the first two digits of the entered password.
 4. **Screen Brightness Check:** Ensures that the screen brightness level is greater than 50%.
-5. **Time Range Verification:** Allows login only if the current time is between 10:00 AM and 9:00 PM.
+5. **Time Range Verification:** Allows login only if the current time is between 10:00 AM and 10:00 PM.
 
 ## Project Structure
 
