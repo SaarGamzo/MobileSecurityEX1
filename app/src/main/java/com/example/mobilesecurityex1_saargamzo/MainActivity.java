@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Verifies if the current time is within the specified range.
-     * @return true if the current time is between 10:00 and 21:00, false otherwise.
+     * @return true if the current time is between 10:00 and 22:00, false otherwise.
      */
     private boolean verifyTimeInRange() {
         Calendar calendar = Calendar.getInstance();
         int currentHour = calendar.get(Calendar.HOUR_OF_DAY);
         int minHour = 10;
-        int maxHour = 21;
+        int maxHour = 22;
         return currentHour >= minHour && currentHour < maxHour;
     }
 
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             result = false;
         }
         if (!verifyTimeInRange()) {
-            missingText.append("# Hour is not between 10-21!\n");
+            missingText.append("# Hour is not between 10-22!\n");
             result = false;
         }
         if (!result) {
