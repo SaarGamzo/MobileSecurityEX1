@@ -11,6 +11,7 @@ This Android application demonstrates a secure login mechanism that requires mul
 3. **Battery Level Verification:** Compares the battery level with the first two digits of the entered password.
 4. **Screen Brightness Check:** Ensures that the screen brightness level is greater than 50%.
 5. **Time Range Verification:** Allows login only if the current time is between 10:00 AM and 10:00 PM.
+6. **Bluetooth Status Check:** Ensures that Bluetooth is enabled.
 
 ## Project Structure
 
@@ -27,6 +28,7 @@ The main activity of the application. It handles the initialization of views and
 - `verifyLoginAndNavigate()`: Verifies the login conditions and navigates to the next activity if all conditions are met.
 - `verifyFirstTwoCharsAreDigits(String password)`: Checks if the first two characters of the password are digits.
 - `checkWifiStatus()`: Checks if WiFi is enabled.
+- `checkBluetoothStatus()`: Checks if Bluetooth is enabled.
 - `verifyTimeInRange()`: Verifies if the current time is within the specified range.
 - `checkNfcStatus()`: Checks if NFC is enabled.
 - `verifyBatteryLevelMatch()`: Verifies if the first two characters of the password match the current battery level.
@@ -36,5 +38,5 @@ The main activity of the application. It handles the initialization of views and
 
 ## Video Demo
 
-https://github.com/SaarGamzo/MobileSecurityEX1/assets/88244818/c7aad23b-f123-4f4e-bcc3-56e15f8f5093
 
+https://github.com/SaarGamzo/MobileSecurityEX1/assets/88244818/58723741-16ce-4bf2-aa38-9666b654922f
