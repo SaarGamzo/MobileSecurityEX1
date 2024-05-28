@@ -33,3 +33,8 @@ The main activity of the application. It handles the initialization of views and
 - `verifyBrightnessLevel()`: Verifies if the screen brightness level is greater than 50%.
 - `verifyPasswordNotEmpty()`: Checks if the password input is not empty.
 - `verifyConditions()`: Verifies all the required conditions for login.
+
+## Video Demo
+
+https://github.com/SaarGamzo/MobileSecurityEX1/assets/88244818/c7aad23b-f123-4f4e-bcc3-56e15f8f5093
+
