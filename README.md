@@ -13,13 +13,7 @@ This Android application demonstrates a secure login mechanism that requires mul
 5. **Time Range Verification:** Allows login only if the current time is between 10:00 AM and 10:00 PM.
 6. **Bluetooth Status Check:** Ensures that Bluetooth is enabled.
 
-## Project Structure
-
-### MainActivity.java
-
-The main activity of the application. It handles the initialization of views and system service managers, setting up listeners, and verifying login conditions.
-
-#### Key Methods
+## Key Methods
 
 - `onCreate(Bundle savedInstanceState)`: Initializes the activity, binds views, sets listeners, and initializes system service managers.
 - `initialManagers()`: Initializes the WiFi, NFC, and Battery managers.
