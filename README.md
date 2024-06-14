@@ -4,7 +4,7 @@
 
 This Android application demonstrates a secure login mechanism that requires multiple conditions to be met before allowing the user to proceed. The conditions include checking WiFi and NFC status, verifying battery level, ensuring screen brightness is above a threshold, and matching the battery level with the first two digits of the entered password.
 
-## Features
+## Conditions to log in:
 
 1. **WiFi Status Check:** Ensures that WiFi is enabled.
 2. **NFC Status Check:** Ensures that NFC is enabled.
